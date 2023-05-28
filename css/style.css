@@ -2570,8 +2570,8 @@ label {
 }
 @media screen and (max-width: 992px) {
   .sidebar {
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 260px;
     height: 100%;
     z-index: 3;
     width: 280px !important;

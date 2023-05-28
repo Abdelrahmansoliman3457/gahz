@@ -2571,7 +2571,7 @@ label {
 @media screen and (max-width: 992px) {
   .sidebar {
     position: fixed;
-    top: 260px;
+    top: 265px;
     height: 100%;
     z-index: 3;
     width: 280px !important;

@@ -105,6 +105,17 @@ a:hover {
 }
 .links a {
   color: var(--color-white);
+  padding-bottom: 10px;
+  position: relative;
+}
+.links li a.active::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--main);
+  width: 75%;
+  height: 3px;
 }
 .logo img {
   width: 130px;

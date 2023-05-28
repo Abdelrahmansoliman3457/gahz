@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="flag/build/css/intlTelInput.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="nav-layer"></div>
+    <!--start loader-->
+    <div class="loader">
+      <div class="logo-co-p">
+        <img src="imgs/Group 96420.png" alt="" />
+      </div>
+      <div id="progressbar"></div>
+    </div>
+    <!--End loader-->
+
+    <!--start content-->
+    <div class="img-background">
+      <img src="imgs/adrian-sulyok-scfzNLg6rrhQ-unsplash (1).png" alt="" />
+    </div>
+    <div class="choose-login">
+      <div class="login-box">
+        <div class="container">
+          <div class="row h-100 reverse-mobile">
+            <div class="col-lg-6 mb-3">
+              <form action="test.html" class="h-100">
+                <div class="right-login h-100">
+                  <div class="spe-container w-100">
+                    <div class="flex-group-me">
+                      <h5 class="main-title mb-5">مرحبا بك</h5>
+                    </div>
+                    <h6 class="font-bold">تسجيل الدخول</h6>
+                    <p class="gray-col font14">
+                      برجاء ادخال بيانات حسابك لتتمكن من تسجيل الدخول
+                    </p>
+
+                    <div class="main-input-cont mb-3 mt-4">
+                      <input type="text" id="number-country" hidden value="" />
+                      <h6 class="mb-2 font14">رقم الجوال</h6>
+                      <input
+                        type="tel"
+                        id="telephone"
+                        class="main-input"
+                        placeholder="برجاء ادخال رقم الجوال"
+                      />
+                    </div>
+                    <div class="main-input-cont mb-2 mt-4">
+                      <h6 class="mb-2 font14">كلمة المرور</h6>
+                      <input
+                        type="password"
+                        class="main-input inputPassSet"
+                        placeholder="برجاء ادخال كلمة المرور"
+                      />
+                      <div
+                        class="main-float gray-col pointer-click check-setting-ic"
+                      >
+                        <i class="fa-regular fa-eye"></i>
+                      </div>
+                    </div>
+                    <div class="flex-end-main">
+                      <a href="forget-pass.html" class="forget-pass gray-col font14"
+                        >هل نسيت كلمة المرور؟</a
+                      >
+                    </div>
+                    <button class="full-width-btn mt-4 main-btn w-100 up mb-3">
+                      تسجيل الدخول
+                    </button>
+                    <div class="flex-group-me">
+                      <div class="dont-have font14 gray-col">
+                        ليس لديك حساب؟ <a href="register.html">اضغط هنا</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-6 mb-3">
+              <div class="left-login flex-group-me h-100">
+                <div class="spe-container img-bg">
+                  <img src="imgs/Group 96420.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end content-->
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="flag/build/js/intlTelInput.min.js"></script>
+ 
+
+    <script src="js/main.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!--call iti-->
+    <script>
+      var input = document.querySelector("#telephone");
+      let iti = window.intlTelInput(input, {
+        autoPlaceholder: "ادخل",
+        customPlaceholder: "kggg",
+        initialCountry: "sa",
+        separateDialCode: true,
+      });
+
+      $("#number-country").val(iti.getSelectedCountryData().dialCode);
+
+      input.addEventListener("countrychange", function () {
+        $("#number-country").val(iti.getSelectedCountryData().dialCode);
+        console.log(iti.getSelectedCountryData().dialCode);
+      });
+    </script>
+    <!-- PassWord Show and hide -->
+    <script>
+      const iconsPassSet = document.querySelectorAll(".check-setting-ic");
+
+      if (iconsPassSet) {
+        iconsPassSet.forEach((ic) => {
+          ic.addEventListener("click", function () {
+            let input = ic.parentElement.querySelector(".inputPassSet");
+            showPassword(input, ic);
+          });
+        });
+      }
+
+      // Function To Show And Hide Password
+      function showPassword(input, icon) {
+        if (input.type == "password") {
+          input.setAttribute("type", "text");
+          icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
+        } else {
+          input.setAttribute("type", "password");
+          icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
+        }
+
+        // input.focus();
+      }
+    </script>
+  </body>
+</html>

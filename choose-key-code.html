@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Forget pass</title>
+    <title>Key code</title>
   </head>
   <body>
     <div class="nav-layer"></div>
@@ -41,30 +41,56 @@
         <div class="container">
           <div class="row h-100 reverse-mobile">
             <div class="col-lg-6 mb-3">
-              <form action="choose-key-code.html" class="h-100">
+              <form action="keycode.html" class="h-100">
                 <div class="right-login h-100">
                   <div class="spe-container w-100">
                     <div class="flex-group-me">
-                      <h5 class="main-title mb-5">مرحبا بك</h5>
+                      <h5 class="main-title mb-3">مرحبا بك</h5>
                     </div>
-                    <h6 class="font-bold">نسيت كلمة المرور</h6>
-                    <p class="gray-col font14">
-                      الرجاء ادخال رقم الجوال لارسال رمز التفعيل اليك
+                    <div class="flex-group-me mb-2">
+                      <img class="key-codeimg" src="imgs/code.png" alt="" />
+                    </div>
+                    <h6 class="font-bold text-center">رمز التفعيل</h6>
+                    <p class="gray-col font13 text-center">
+                      برجاء اختيار وسيلة استلام رمز التفعيل 
                     </p>
 
-                    <div class="main-input-cont mb-3 mt-4">
-                      <input type="text" id="number-country" hidden value="" />
-                      <h6 class="mb-2 font14">رقم الجوال</h6>
-                      <input
-                        type="tel"
-                        id="telephone"
-                        class="main-input"
-                        placeholder="برجاء ادخال رقم الجوال"
-                      />
-                    </div>
 
-                    <button class="full-width-btn mt-4 main-btn w-100 up mb-3">
-                      تسجيل الدخول
+
+                   <div class="choose-container mb-3">
+                    <input
+                    class=""
+                    type="radio"
+                    hidden
+                    id="phone-choose"
+                    name="main-choose"
+                    />
+                    <label for="phone-choose" class="choose-ph">
+                        <div class="phone-choose-text">رقم الجوال</div>
+                        <span><i class="fa-solid fa-check"></i></span>
+                    </label>
+
+                   </div>
+                   <div class="choose-container mb-3">
+                    <input
+                    class=""
+                    type="radio"
+                    hidden
+                    id="mail-choose"
+                    name="main-choose"
+                    />
+                    <label for="mail-choose" class="choose-ph">
+                        <div class="phone-choose-text">البريد الالكتروني</div>
+                        <span><i class="fa-solid fa-check"></i></span>
+                    </label>
+
+                   </div>
+                 
+                    <button
+                      type="submit"
+                      class="full-width-btn mt-4 main-btn w-100 up mb-3 "
+                    >
+                       تاكيد
                     </button>
                   </div>
                 </div>
@@ -93,22 +119,7 @@
     <script>
       new WOW().init();
     </script>
-    <!--call iti-->
-    <script>
-      var input = document.querySelector("#telephone");
-      let iti = window.intlTelInput(input, {
-        autoPlaceholder: "ادخل",
-        customPlaceholder: "kggg",
-        initialCountry: "sa",
-        separateDialCode: true,
-      });
 
-      $("#number-country").val(iti.getSelectedCountryData().dialCode);
 
-      input.addEventListener("countrychange", function () {
-        $("#number-country").val(iti.getSelectedCountryData().dialCode);
-        console.log(iti.getSelectedCountryData().dialCode);
-      });
-    </script>
-  </body>
+
 </html>

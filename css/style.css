@@ -3129,3 +3129,30 @@ a.between-divs:hover {
   background-color: var(--main);
   border-color: var(--main);
 }
+.choose-ph{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--main);
+  border-radius: 8px;
+  color: var(--main);
+  padding: 12px 0;
+  cursor: pointer;
+}
+.choose-ph span{
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.choose-container input:checked ~ .choose-ph span {
+  background-color: var(--main);
+  border-color: var(--main);
+}

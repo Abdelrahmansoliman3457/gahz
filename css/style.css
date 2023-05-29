@@ -118,7 +118,7 @@ a:hover {
   height: 3px;
 }
 .logo img {
-  width: 130px;
+  width: 120px;
 }
 .flex-li {
   display: flex;
@@ -567,6 +567,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 .main-card {
   box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 12%);
@@ -1486,7 +1487,7 @@ input::-webkit-inner-spin-button {
     width: 280px;
     flex-direction: column;
     gap: 20px;
-    height: calc(100vh - 0px);
+    /* height: calc(100vh - 0px); */
     box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 12%);
     background: var(--color-white);
     justify-content: flex-start;
@@ -1495,6 +1496,7 @@ input::-webkit-inner-spin-button {
     transition: all 0.8s cubic-bezier(0.68, -0.3, 0.265, 1.3);
     transform: translateX(100%);
     color: #000;
+    overflow-y: auto;
   }
   .links a {
     color: #000;
@@ -2582,7 +2584,7 @@ label {
 @media screen and (max-width: 992px) {
   .sidebar {
     position: fixed;
-    top: 265px;
+    top: 180px;
     height: 100%;
     z-index: 3;
     width: 280px !important;
@@ -2592,7 +2594,7 @@ label {
     align-items: center;
     flex-direction: column; */
     transform: translateX(150%);
-    right: 20px;
+    right: 0px;
   }
   .sidebar.active {
     transform: translateX(0) !important;
@@ -2675,6 +2677,7 @@ label {
 }
 .profile-secion {
   display: flex;
+  gap: 25px;
 }
 .pac-target-input {
   width: 50%;
@@ -3038,4 +3041,12 @@ a.between-divs:hover {
 .overlay-profile.active{
   transform: translateX(0);
 }
+.jq-ry-container{
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .flex-sm-gap{
+    flex-wrap: wrap;
 
+  }
+}

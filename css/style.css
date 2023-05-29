@@ -1194,6 +1194,7 @@ a.company-login:hover {
 #telephone {
   padding-right: 12px;
   padding-right: 100px;
+  padding-left: 0 !important;
 }
 #telephone-left {
   padding-right: 40px;
@@ -1202,6 +1203,7 @@ a.company-login:hover {
 #telephone2 {
   padding-right: 12px;
   padding-right: 100px;
+  padding-left: 0 !important;
 }
 #telephone3 {
   padding-right: 12px;

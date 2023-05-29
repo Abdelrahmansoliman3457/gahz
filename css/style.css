@@ -1668,7 +1668,7 @@ input::-webkit-inner-spin-button {
 }
 
 .search.active {
-  top: 102px;
+  top: 100%;
 }
 .search-btn {
   position: absolute;

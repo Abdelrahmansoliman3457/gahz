@@ -150,23 +150,28 @@
 
     <!--get key code-->
     <script>
-      $(document).ready(function () {
+      jQuery(function($) { // DOM ready and $ alias secured
         let codes = document.querySelectorAll(".code");
-
         $(".code-container .code").first().focus();
 
-        codes.forEach((code, idx) => {
-          code.addEventListener("keypress", (e) => {
-            if (e.key >= 0 && e.key <= 9) {
-              codes[idx].value = "";
-              if ([idx + 1] < codes.length) {
-                setTimeout(() => codes[idx + 1].focus(), 10);
+          codes.forEach((code, idx) => {
+            code.addEventListener("keydown", (e) => {
+              if (e.key >= 0 && e.key <= 9) {
+                codes[idx].value = "";
+                if ([idx + 1] < codes.length) {
+                  setTimeout(() => codes[idx + 1].focus(), 10);
+                }
+              } else if (e.key === "Backspace") {
+                setTimeout(() => codes[idx - 1].focus(), 10);
               }
-            } else if (e.key === "Backspace") {
-              setTimeout(() => codes[idx - 1].focus(), 10);
-            }
+            });
           });
-        });
+    
+       });
+      $(document).ready(function () {
+        
+
+      
         // add key code value to  hidden input
         let HiddenInp = document.querySelector("#key-code");
         let AjaxBtn = document.querySelector(".key-ajax");

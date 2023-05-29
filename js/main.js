@@ -113,8 +113,8 @@ window.onscroll = function () {
 
 //  add active class to cuurent link
 $(".links li a").each(function () {
-  console.log($(this).attr("href"));
-  console.log(window.location.href);
+  // console.log($(this).attr("href"));
+  // console.log(window.location.href);
   if (window.location.href.includes($(this).attr("href"))) {
     $(this).addClass("active");
   }

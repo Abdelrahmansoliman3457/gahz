@@ -156,7 +156,7 @@
         $(".code-container .code").first().focus();
 
         codes.forEach((code, idx) => {
-          code.addEventListener("keydown", (e) => {
+          code.addEventListener("keypress", (e) => {
             if (e.key >= 0 && e.key <= 9) {
               codes[idx].value = "";
               if ([idx + 1] < codes.length) {

@@ -1064,13 +1064,22 @@ a.app-store:hover {
 }
 .icon-loin img {
   width: 65px;
+  height: 70px;
   margin-bottom: 5px;
+  object-fit: contain;
 }
 .login-main {
   width: 270px;
   padding: 10px 0;
   border: 1px solid var(--main);
   text-align: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.login-main:hover{
+  transform: translateY(-6px);
+  box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 22%);
+  
 }
 a.another-login:hover {
   color: var(--color-white);
@@ -3060,5 +3069,11 @@ a.between-divs:hover {
   .flex-sm-gap{
     flex-wrap: wrap;
 
+  }
+  .product-name, .product-price{
+    font-size: 15px;
+  }
+  .offer-type{
+    font-size: 16px;
   }
 }
